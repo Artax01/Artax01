@@ -10,10 +10,3 @@
 ![](https://github-readme-stats.vercel.app/api?username=Artax01&show_icons=true&theme=radical&hide_border=false&include_all_commits=true&count_private=true)
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=Artax01&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
-# The languages ​​I learn at the moment:
-![C](https://img.shields.io/badge/Langage-C-blue)
-![Java](https://img.shields.io/badge/Langage-Java-red)
-![HTML](https://img.shields.io/badge/Langage-HTML-orange)
-![CSS](https://img.shields.io/badge/Langage-CSS-blueviolet)
-![JavaScript](https://img.shields.io/badge/Langage-JavaScript-yellow)
-![SQL](https://img.shields.io/badge/Langage-SQL-green)
