@@ -3,7 +3,7 @@
 # Introduction of myself
 - 👋 Hi, I’m @Artax01
 - 👀 I’m interested in IT  / Cybersecurity  /  Cryptography  /  Mathematics  /  Network  /  Low Level Code
-- 🌱 I’m currently learning IT in IUT Grand Ouest Normandie
+- 🌱 I’m currently learning IT in IUT Grand Ouest Normandie in University of Caen
 - 📫 How to reach me :  xxx
 
 # Github Stats:
