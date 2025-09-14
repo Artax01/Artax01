@@ -1,145 +1,274 @@
-<!DOCTYPE html>
-<html lang="en" class="h-screen" style="background-image: linear-gradient(to left bottom, #22043b, #36326b, #4a609a, #6290c7, #81c2f3);">
+<!doctype html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, shrink-to-fit=no" />
     <meta http-equiv="cleartype" content="on">	
-	<title>Portfolio - Artax01</title>
-	<script src="https://cdn.tailwindcss.com"></script>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Portfolio - Artax01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .hero-bg {
+            background: radial-gradient(1200px 600px at 10% 10%, rgba(99,102,241,0.12), transparent 12%), radial-gradient(800px 400px at 90% 90%, rgba(14,165,233,0.06), transparent 10%), linear-gradient(180deg,#0f172a 0%, #111827 55%);
+        }
+
+        .display-title {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-pill {
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(4px);
+        }
+
+        .truncate-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
 </head>
+<body class="antialiased text-slate-900 bg-slate-50">
 
-<body class="max-w-7xl mx-auto p-6 bg-gray-100 mt-6 text-gray-800 rounded-xl">
-	<header class="px-6 pt-6">
-		<div class="flex flex-row space-x-6 items-center mb-4">
-			<img id="avatar" src="" alt="" class="w-24 h-24 rounded-full border-4 border-indigo-400 shadow-lg">
-			<div>
-				<h1 id="username" class="text-2xl font-bold"></h1>
-				<p id="followers"></p>
-				<p id="location"></p>
-			</div>
-		</div>
-		<p id="bio" class="p-2 font-semibold">Student & Developer.</p>
-	</header>
+  <header class="hero-bg text-white">
+    <div class="max-w-6xl mx-auto px-6 py-16 lg:py-28">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-4 mb-6">
+            <img id="avatar" src="" alt="" class="w-20 h-20 rounded-full ring-4 ring-indigo-400 shadow-lg object-cover" />
+            <div>
+              <h1 id="name" class="text-3xl sm:text-4xl display-title"></h1>
+              <p id="login" class="text-sm text-indigo-200 mt-1"></p>
+            </div>
+          </div>
 
-	<section class="p-6 flex flex-col sm:flex-row gap-4 items-center justify-between">
-		<input id="search" type="text" placeholder="🔍 Search for a project..." class="w-full sm:w-1/3 px-4 py-2 border rounded-xl focus:ring focus:ring-indigo-200">
+          <p id="bio" class="text-slate-200 text-lg max-w-3xl"></p>
 
-		<select id="languageFilter" class="px-4 py-2 border rounded-xl">
-			<option value="">🌐 All languages</option>
-		</select>
+          <div class="mt-6 flex flex-wrap gap-3 items-center">
+            <div id="followers" class="stat-pill px-4 py-2 rounded-full text-sm text-slate-100">👥 0 followers</div>
+            <div id="reposCount" class="stat-pill px-4 py-2 rounded-full text-sm text-slate-100">📦 0 repos</div>
+            <div id="location" class="stat-pill px-4 py-2 rounded-full text-sm text-slate-100">📍 Not provided</div>
+            <a id="blog" class="stat-pill px-4 py-2 rounded-full text-sm text-slate-100 hover:underline" href="#" target="_blank">🔗 Site</a>
+          </div>
 
-		<select id="sort" class="px-4 py-2 border rounded-xl">
-			<option value="updated">⏰ Last update</option>
-			<option value="stars">⭐ Most starred</option>
-		</select>
-	</section>
+          <div class="mt-8 flex gap-3">
+            <a id="githubBtn" href="#" target="_blank" class="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full shadow">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.4-1.2-1.8-1.2-1.8-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.8.7 2.2 1 .1-.8.4-1.4.7-1.7-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.4 0 0 1-.3 3.4 1.2 1-.3 2.1-.5 3.2-.5 1.1 0 2.2.2 3.2.5 2.4-1.5 3.4-1.2 3.4-1.2.6 1.8.2 3.1.1 3.4.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.4.7 1 .7 2v3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.65 18.35.5 12 .5z"/></svg>
+              See my GitHub
+            </a>
 
-	<main id="projects" class="grid gap-6 p-6 sm:grid-cols-2 lg:grid-cols-3"></main>
-	
-  	<script>
-		const username = "artax01";
-		const container = document.getElementById("projects");
-		const searchInput = document.getElementById("search");
-		const languageFilter = document.getElementById("languageFilter");
-		const sortSelect = document.getElementById("sort");
-		let allRepos = [];
+            <a href="#projectsSection" class="inline-flex items-center gap-2 border border-white/20 text-white px-5 py-3 rounded-full hover:bg-white/5">
+              See my projects
+            </a>
+          </div>
+        </div>
 
-		async function fetchProfile() {
-			const response = await fetch(`https://api.github.com/users/${username}`);
-			const user = await response.json();
+        <div class="hidden lg:block">
+          <div class="bg-white/5 p-6 rounded-2xl shadow-xl border border-white/5">
+            <h3 class="text-sm text-indigo-200 font-semibold">About</h3>
+            <p id="shortAbout" class="mt-3 text-slate-100 text-sm leading-relaxed"></p>
 
-			document.getElementById("avatar").src = user.avatar_url;
-			document.getElementById("username").textContent = `${user.name} (${user.login})`;
-			document.getElementById("followers").textContent = `👥 ${user.followers} Followers`;
-			document.getElementById("location").textContent = `📍 ${user.location}`;
-			// document.getElementById("bio").textContent = user.bio || "";
-		}
+            <div class="mt-6 grid grid-cols-2 gap-3">
+              <div class="p-3 bg-white/3 rounded-lg text-center">
+                <div id="stars" class="text-lg font-bold">⭐ 0</div>
+                <div class="text-xs text-slate-200">Total stars</div>
+              </div>
+              <div class="p-3 bg-white/3 rounded-lg text-center">
+                <div id="forks" class="text-lg font-bold">🍴 0</div>
+                <div class="text-xs text-slate-200">Total forks</div>
+              </div>
+            </div>
 
-		async function fetchRepos() {
-			const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
-			allRepos = await response.json();
-			if (allRepos.message) {
-				container.innerHTML = "<p class='text-center col-span-full'>No repository found.</p>";
-				return;
-			}
-			renderRepos();
-			completeLanguageFilter();
-		}
+            <div class="mt-6">
+              <a id="contactBtn" class="inline-block w-full text-center border border-indigo-500 px-4 py-2 rounded-full text-indigo-100 hover:bg-indigo-500/10" href="#contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-		function renderRepos() {
-			container.innerHTML = "";
+  <section id="projectsSection" class="max-w-6xl mx-auto px-6 -mt-8">
+    <div class="bg-white rounded-2xl p-5 shadow-sm">
+      <div class="flex flex-col sm:flex-row gap-3 items-center justify-between">
+        <div class="flex-1">
+          <input id="search" type="text" placeholder="🔍 Search for a project (name, description)..." class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-indigo-300" />
+        </div>
 
-			let repos = [...allRepos];
-			
-			// partie pour trier en fonction de la recherche
-			try {
-				const query = searchInput.value.toLowerCase();
-				if (query) {
-					repos = repos.filter(repo => repo.name.toLowerCase().includes(query) || (repo.description && repo.description.toLowerCase().includes(query)));
-				}
-			} catch (e) {
-				console.error("Search error:", e);
-			}
+        <div class="flex gap-3 items-center mt-3 sm:mt-0">
+          <select id="languageFilter" class="px-4 py-3 rounded-lg border bg-white">
+            <option value="">🌐 All languages</option>
+          </select>
 
-			// partie pour trier par langage
-			try {
-				const selectedLang = languageFilter.value;
-				if (selectedLang) {
-					repos = repos.filter(repo => repo.language === selectedLang);
-				}
-			} catch (e) {
-				console.error("Language filtering error:", e);
-			}
+          <select id="sort" class="px-4 py-3 rounded-lg border bg-white">
+            <option value="updated">⏰ Last update</option>
+            <option value="stars">⭐ Most star</option>
+            <option value="name">🔤 Name (A → Z)</option>
+          </select>
+        </div>
+      </div>
+    </div>
 
-			// partie pour trier en fonction du nombre d'étoiles ou de la date de mise à jour
-			try {
-				const sortBy = sortSelect.value;
-				if (sortBy === "stars") {
-					repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
-				} else {
-					repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-				}
-			} catch (e) {
-				console.error("Repository sorting error:", e);
-			}
+    <main id="projects" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6"></main>
+  </section>
 
-			repos.forEach(repo => {
-				const card = document.createElement("div");
-				card.className = "bg-white rounded-2xl shadow p-6 hover:shadow-lg transition";
+  <footer id="contact" class="max-w-6xl mx-auto px-6 py-12 text-sm text-slate-600">
+    <div class="bg-white p-6 rounded-2xl shadow-sm">
+    </div>
+  </footer>
 
-				card.innerHTML = `
-				<h2 class="text-xl font-semibold mb-2">
-					<a href="${repo.html_url}" target="_blank" class="text-indigo-600 hover:underline">${repo.name}</a>
-				</h2>
-				<p class="text-gray-600 mb-4">${repo.description || "No description."}</p>
-				<div class="flex justify-between text-sm text-gray-500">
-					<span>⭐ ${repo.stargazers_count}</span>
-					<span>🍴 ${repo.forks_count}</span>
-					<span>💻 ${repo.language || "N/A"}</span>
+  <script>
+    const username = "artax01";
+    const avatarEl = document.getElementById("avatar");
+    const nameEl = document.getElementById("name");
+    const loginEl = document.getElementById("login");
+    const bioEl = document.getElementById("bio");
+    const followersEl = document.getElementById("followers");
+    const reposCountEl = document.getElementById("reposCount");
+    const locationEl = document.getElementById("location");
+    const blogEl = document.getElementById("blog");
+    const githubBtn = document.getElementById("githubBtn");
+    const starsEl = document.getElementById("stars");
+    const forksEl = document.getElementById("forks");
+    const shortAboutEl = document.getElementById("shortAbout");
+
+    const projectsContainer = document.getElementById("projects");
+    const searchInput = document.getElementById("search");
+    const languageFilter = document.getElementById("languageFilter");
+    const sortSelect = document.getElementById("sort");
+
+    let allRepos = [];
+
+    async function fetchProfile() {
+        try {
+            const response = await fetch(`https://api.github.com/users/${username}`);
+            const user = await response.json();
+            avatarEl.src = user.avatar_url;
+            nameEl.textContent = user.name || user.login;
+            loginEl.textContent = user.login ? ("@" + user.login) : "";
+            bioEl.textContent = user.bio || "";
+            followersEl.textContent = `👥 ${user.followers || 0} followers`;
+            reposCountEl.textContent = `📦 ${user.public_repos || 0} repos`;
+            locationEl.textContent = `📍 ${user.location || "Not provided"}`;
+
+            if (user.blog) {
+                const url = user.blog.startsWith("http") ? user.blog : "https://" + user.blog;
+                blogEl.href = url;
+                blogEl.textContent = user.blog;
+            } else {
+                blogEl.removeAttribute("href");
+                blogEl.textContent = "No site";
+            }
+
+            githubBtn.href = user.html_url;
+            shortAboutEl.textContent = user.company ? `${user.company} • ${user.location || ""}` : (user.bio || "");
+
+        } catch (err) {
+            console.error("Error profile:", err);
+        }
+    }
+
+    async function fetchRepos() {
+        try {
+            const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`);
+            allRepos = await response.json();
+            renderRepos();
+            addLangsInList();
+            statsSum();
+        } catch (err) {
+            console.error("Error repos:", err);
+            projectsContainer.innerHTML = `<div class="col-span-full p-6 text-center text-sm text-red-600">Unable to retrieve repositories.</div>`;
+        }
+    }
+
+    function statsSum() {
+		const totalStars = allRepos.reduce((s, r) => s + (r.stargazers_count || 0), 0);
+		const totalForks = allRepos.reduce((s, r) => s + (r.forks_count || 0), 0);
+		starsEl.textContent = `⭐ ${totalStars}`;
+		forksEl.textContent = `🍴 ${totalForks}`;
+    }
+
+    function addLangsInList() {
+        const langs = [...new Set(allRepos.map(r => r.language).filter(Boolean))];
+        langs.sort();
+        langs.forEach(lang => {
+            const option = document.createElement("option");
+            option.value = lang;
+            option.textContent = lang;
+            languageFilter.appendChild(option);
+        });
+    }
+
+    function renderRepos() {
+        projectsContainer.innerHTML = "";
+        let repos = [...allRepos];
+
+        const query = (searchInput.value || "").trim().toLowerCase();
+        if (query) {
+        	repos = repos.filter(r => (r.name && r.name.toLowerCase().includes(query)) || (r.description && r.description.toLowerCase().includes(query)));
+        }
+
+        const lang = languageFilter.value;
+        if (lang) repos = repos.filter(r => r.language === lang);
+
+        const sortBy = sortSelect.value;
+        if (sortBy === "stars") {
+          	repos.sort((a,b) => (b.stargazers_count || 0) - (a.stargazers_count || 0));
+        } else if (sortBy === "name") {
+          	repos.sort((a,b) => a.name.localeCompare(b.name));
+        } else {
+          	repos.sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at));
+        }
+
+        if (repos.length === 0) {
+          	projectsContainer.innerHTML = `<div class="col-span-full p-6 text-center text-sm text-slate-500">No projects found.</div>`;
+          	return;
+        }
+
+        repos.forEach(repo => {
+			const updated = new Date(repo.updated_at);
+			const updatedStr = updated.toLocaleDateString();
+
+			const card = document.createElement("article");
+			card.className = "bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transform hover:-translate-y-1 transition duration-200";
+
+			card.innerHTML = `
+				<div class="flex items-start justify-between gap-4">
+				<div class="flex-1 min-w-0">
+					<a href="${repo.html_url}" target="_blank" class="text-lg font-semibold text-indigo-600 hover:underline truncate">${repo.name}</a>
+					<p class="mt-2 text-sm text-slate-600 truncate-2">${repo.description || "No description."}</p>
 				</div>
-				`;
-				container.appendChild(card);
-			});
-		}
+				<div class="text-right text-xs text-slate-400">
+					<div>${updatedStr}</div>
+				</div>
+				</div>
 
-		// partie pour ajouter les langages comme option dans le filtre
-		function completeLanguageFilter() {
-			const langs = [...new Set(allRepos.map(r => r.language).filter(Boolean))];
-			langs.sort();
-			langs.forEach(lang => {
-				const option = document.createElement("option");
-				option.value = lang;
-				option.textContent = lang;
-				languageFilter.appendChild(option);
-			});
-		}
-		searchInput.addEventListener("input", renderRepos);
-		languageFilter.addEventListener("change", renderRepos);
-		sortSelect.addEventListener("change", renderRepos);
+				<div class="mt-4 flex items-center justify-between text-xs text-slate-500 gap-3">
+				<div class="flex items-center gap-3">
+					<span class="px-2 py-1 bg-slate-100 rounded-full text-slate-700">⭐ ${repo.stargazers_count || 0}</span>
+					<span class="px-2 py-1 bg-slate-100 rounded-full text-slate-700">🍴 ${repo.forks_count || 0}</span>
+					<span class="px-2 py-1 bg-slate-100 rounded-full text-slate-700">${repo.language || "N/A"}</span>
+				</div>
 
-		fetchProfile();
-		fetchRepos();
-  	</script>
+				<div class="flex items-center gap-3">
+					<a href="${repo.html_url}" target="_blank" class="text-indigo-600 hover:underline">See</a>
+					${repo.homepage ? `<a href="${repo.homepage}" target="_blank" class="text-green-600 hover:underline">Site</a>` : ""}
+				</div>
+				</div>
+			`.trim();
+
+			projectsContainer.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener("input", renderRepos);
+    languageFilter.addEventListener("change", renderRepos);
+    sortSelect.addEventListener("change", renderRepos);
+
+    fetchProfile();
+    fetchRepos();
+  </script>
 </body>
 </html>
